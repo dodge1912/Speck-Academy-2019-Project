@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var list = [];
+            list.length = 5;
+
+            var list = [
+                {
+                name: "Dvorana5",
+                Id: 5,
+                reservation: {
+                    isReserved: false,
+                    reservedFrom: null,
+                    reservedUntil: null,
+                    },
+                },
+                {
+                name: "Dvorana1",
+                Id: 1,
+                reservation: {
+                    isReserved: false,
+                    reservedFrom: null,
+                    reservedUntil: null,
+                    },
+                },
+                {
+                name: "Dvorana2",
+                Id: 2,
+                reservation: {
+                    isReserved: false,
+                    reservedFrom: null,
+                    reservedUntil: null,
+                    },
+                },
+                {
+                name: "Dvorana3",
+                Id: 3,
+                reservation: {
+                    isReserved: false,
+                    reservedFrom: null,
+                    reservedUntil: null,
+                    },
+                },
+                {
+                name: "Dvorana4",
+                Id: 4,
+                reservation: {
+                    isReserved: false,
+                    reservedFrom: null,
+                    reservedUntil: null,
+                    },
+                },
+                ];
+
+            function add(name){
+                var hall = {
+                    name : name,
+                    Id : Math.floor((Math.random() * 5) + 1), 
+                    reservation : {
+                        isReserved : false,
+                        reservedFrom : null,
+                        reservedUntil : null,
+                    },
+                }
+                list.push(hall);
+            }
+
+            function remove(Id){
+                for(var i = 0 ; i < list.length ; i++){
+                    if(list[i].Id === Id){
+                        list.splice(i,1);
+                        break;
+                    }
+                }
+            }
+
+            function reservation(Id , reservedFrom , reservedUntil){
+                for(var i = 0 ; i < list.length ; i++){
+                    if(list[i].Id === Id){
+                        list[i].reservation.reservedFrom = new Date();
+                        //hall.reservation.reservedUntil = ;
+                        list[i].reservation.isReserved = true;
+                    }
+                }
+            }
+
+            function checkReservation(Id){
+                for(var i = 0 ; i < list.length ; i++){
+                    var currentDate = new Date();
+                    if(list[i].Id === Id){
+                        if(list[i].reservation.reservedUntil < currentDate ){
+                            list[i].reservation.reservedFrom = null;
+                            list[i].reservation.reservedUntil = null;
+                            list[i].reservation.isReserved = false;
+                        }
+                    }
+                }
+            }
+            </script>
+    </head>
+</html>
