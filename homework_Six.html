@@ -77,9 +77,9 @@
 
             function reservation(Id , reservedFrom , reservedUntil){
                 for(var i = 0 ; i < list.length ; i++){
-                    if(list[i].Id === Id){
-                        list[i].reservation.reservedFrom = new Date();
-                        //hall.reservation.reservedUntil = ;
+                    if([i].Id === Id){
+                        list[i].reservation.reservedFrom = new Date(reservationFrom);
+                        hall[i].reservation.reservedUntil = new Date(reservationUntil);
                         list[i].reservation.isReserved = true;
                     }
                 }
