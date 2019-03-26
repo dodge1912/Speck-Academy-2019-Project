@@ -1,4 +1,4 @@
-const http = require("http");
+const http = require('http');
 const hostname = "127.0.0.1";
 const port = 8000;
 
@@ -10,20 +10,27 @@ var list = [
     
 ];
 
-var arrayNames = [];
-for(var i = 0 ; i < list.lenght ; i++){
-    arrayNames.push(list[i].name);
+function HallNames () {
+    var halls = [];
+    for (i = 0; i < list.length; i++) {
+      halls.push(list[i].name);
     }
-
-var nameHalls = arrayNames.join("; ");
-
-var server = http.createServer((request, respnse) => {
-    response.status = 200;
-    response.writeHead('Content-type', 'text/plain');
-    response.end(nameHalls);
+    return halls;
+}
+  
+function HallString () {
+    const hallStr = HallNames().join(", ");
+    return hallStr;
+}
+  
+const server = http.createServer((request, response) => {
+    response.statusCode = 200;
+    response.setHeader('Content-Type', 'text/plain');
+    response.end(HallString());
 });
 
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });
-            
+
+
