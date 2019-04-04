@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj Dvoranu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href=style.css>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <div class="header_flex">
+            <a href="index.html"><h1>Rezervacija dvorana</h1></a>
+            <nav>
+                <a href="#">O nama</a>
+                <a href="halls.html">Dvorane</a>
+            </nav>
+        </div>
+    </header>
+
+    <form action="http://localhost:3000/hallsUpdate" method="post">
+        <div class = "form_flex">
+            <label for="halls">Id Dvorane</label>
+            <input id="hallId" name="hallId" type="number" required>
+            <label for="halls">Rezervirano</label>
+            <input type = "checkbox" name= "isReserved" /> 
+            <label for="reservedUntil">Rezervirano do</label>
+            <input id="reservedUntil" name="reservedUntil" type="datetime-local" required>
+
+            <br>
+          
+            <input type="submit">
+        </div>
+    </form>
+
+    <footer class = "footer">
+        <h4>Grad Križevci</h4>
+    </footer>
+</body>
