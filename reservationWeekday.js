@@ -3,8 +3,8 @@ const luxon = require('luxon');
 const lodash = require('lodash');
 const halls = require('./halls.js');
 
-const hostname = "127.0.0.1";
-const port = 8000;
+const hostname = "138.68.87.73";
+const port = 3003;
 
 var hallsReserved = lodash.filter(halls, 'reservation.isReserved' );
 var hallReservedFirst = lodash.first(hallsReserved);

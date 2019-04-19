@@ -17,8 +17,18 @@
             </nav>
         </div>
     </header>
+    <subheader>
+        <div class="subheader_flex">
+            <nav>
+                <a href = "/halls">Dvorane</a>
+                <a href = "/hallsCreate.html">Dodaj Dvoranu</a>
+                <a href = "/hallsUpdate.html">Rezerviraj Dvoranu</a>
+                <a href = "/hallsDelete.html">Izbriši Dvoranu</a>
+            </nav>
+        </div>
+    </subheader>
 
-    <form action="http://localhost:3000/hallsDelete" method="post">
+    <form action="/hallsDelete" method="post">
         <div class = "form_flex">
             <label for="hallsDelete">ID Dvorane</label>
             <input id="hallsDelete" name="hallsDelete" type="text" required>
